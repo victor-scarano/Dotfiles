@@ -1,0 +1,17 @@
+text-cursor=true
+matching-algorithm=fuzzy
+corner-radius = 10
+text-color = #cdd6f4
+prompt-color = #585b70
+selection-color = #cba6f7
+background-color = #00000033
+width = 40%
+padding-left = 1%
+padding-top = 1%
+height = 40%
+border-width = 0
+outline-width = 0
+result-spacing = 4
+num-results = 12
+font = JetBrains Mono
+font-size = 20
