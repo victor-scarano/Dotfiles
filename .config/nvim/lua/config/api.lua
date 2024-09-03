@@ -5,6 +5,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end
 });
 
+-- For some reason the treesitter highlighting for these highlight groups
+-- look ugly, and doesn't match the currently active colorscheme.
 vim.api.nvim_create_autocmd("ColorScheme", {
 	callback = function()
 		vim.api.nvim_set_hl(0, "@punctuation.delimiter", { link = nil })

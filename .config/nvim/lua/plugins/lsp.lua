@@ -30,10 +30,8 @@ return {
 			local lspconfig = require("lspconfig")
 
 			require("lspconfig.ui.windows").default_options = { border = "rounded" }
-
-			local handlers = {
-				["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-			}
+			local handlers = { ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }) }
+			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000" })
 
 			lspconfig.lua_ls.setup({ handlers = handlers })
 			lspconfig.taplo.setup({ handlers = handlers })
@@ -42,7 +40,7 @@ return {
 
 			vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, {})
-			vim.keymap.set("n", "<leader>h", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, {})
 		end
 	}
 }
