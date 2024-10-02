@@ -1,38 +1,42 @@
-local colorschemes = {
+return {
 	{
 		"morhetz/gruvbox",
 		config = function()
-			vim.g.gruvbox_contrast_dark = "hard"
-			vim.g.gruvbox_contrast_light = "hard"
-			vim.cmd.colorscheme("gruvbox")
-			vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+			-- vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+			-- vim.cmd.colorscheme("gruvbox")
 		end
 	},
 	{
 		"wincent/base16-nvim",
+		name = "base16-irblack",
 		config = function()
-			vim.cmd.colorscheme("base16-irblack")
+			-- vim.cmd.colorscheme("base16-irblack")
 		end
 	},
 	{
-		"Shatur/neovim-ayu",
+		"Mofiqul/vscode.nvim",
 		config = function()
-			local ayu = require("ayu")
-			ayu.setup({
-				mirage = false,
-				terminal = true,
-				overrides = {},
+			require("vscode").setup({
+				trasparent = true,
+				underline_links = true,
+				group_overrides = {
+					Normal = { bg = "#000000" },
+				}
 			})
-			ayu.colorscheme()
+			-- vim.cmd.colorscheme("vscode")
 		end
 	},
 	{
-		"savq/melange-nvim",
+		"projekt0n/github-nvim-theme",
+		name = "github-theme",
 		config = function()
-			vim.cmd.colorscheme("melange")
+			require('github-theme').setup({
+				options = {
+					transparent = true
+				}
+			})
+
+			vim.cmd.colorscheme("github_dark_default")
 		end
 	}
 }
-
-return colorschemes[1]
-
