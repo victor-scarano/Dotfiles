@@ -33,7 +33,7 @@ return {
 			lspconfig.lua_ls.setup({ handlers = handlers })
 			lspconfig.taplo.setup({ handlers = handlers })
 			lspconfig.clangd.setup({ handlers = handlers })
-			lspconfig.rust_analyzer.setup({ handlers = handlers })
+			-- lspconfig.rust_analyzer.setup({ handlers = handlers })
 			lspconfig.zls.setup({ handlers = handlers })
 
 			vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover, {})
