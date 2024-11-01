@@ -14,7 +14,8 @@ return {
                     "lua_ls",
                     "rust_analyzer",
                     "taplo",
-                    "clangd"
+                    "clangd",
+					"zls"
                 }
             })
         end
@@ -29,14 +30,11 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 
-			-- require("lspconfig.ui.windows").default_options = { border = "rounded" }
-			-- local handlers = { ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }) }
-			-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000" })
-
 			lspconfig.lua_ls.setup({ handlers = handlers })
 			lspconfig.taplo.setup({ handlers = handlers })
 			lspconfig.clangd.setup({ handlers = handlers })
 			lspconfig.rust_analyzer.setup({ handlers = handlers })
+			lspconfig.zls.setup({ handlers = handlers })
 
 			vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, {})

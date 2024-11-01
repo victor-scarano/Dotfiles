@@ -2,7 +2,7 @@
 
 ## Todo
 
-- [ ] Change Lazy background color to match colorscheme
-- [ ] Change noice cmdline color to white
 - [ ] Configure lualine
-- [ ] Add VSCode-like inlay hints
+- [ ] Inlay hints
+- [ ] Fix weird error indicator in Nvimtree
+    - Maybe switch to different LSP provider?

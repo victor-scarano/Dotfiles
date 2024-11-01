@@ -2,7 +2,6 @@ return {
 	{
 		"morhetz/gruvbox",
 		config = function()
-			-- vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
 			-- vim.cmd.colorscheme("gruvbox")
 		end
 	},
@@ -11,19 +10,6 @@ return {
 		name = "base16-irblack",
 		config = function()
 			-- vim.cmd.colorscheme("base16-irblack")
-		end
-	},
-	{
-		"Mofiqul/vscode.nvim",
-		config = function()
-			require("vscode").setup({
-				trasparent = true,
-				underline_links = true,
-				group_overrides = {
-					Normal = { bg = "#000000" },
-				}
-			})
-			-- vim.cmd.colorscheme("vscode")
 		end
 	},
 	{
