@@ -1,5 +1,4 @@
 -- customizable foldcolumn plugin
--- does nothing, hasn't been configured
 return {
 	"kevinhwang91/nvim-ufo",
 	dependencies = { "kevinhwang91/promise-async" },

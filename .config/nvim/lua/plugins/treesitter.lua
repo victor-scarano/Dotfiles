@@ -1,5 +1,5 @@
 return {
-	{ "nvim-treesitter/nvim-treesitter-context" },
+	-- ast parser/code highlighter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -11,5 +11,7 @@ return {
 				indent = { enable = true },
 			})
 		end
-	}
+	},
+	-- shows what block of code you're in at the top (by definition)
+	{ "nvim-treesitter/nvim-treesitter-context" }
 }

@@ -1,44 +1,40 @@
 return {
-	{ "ray-x/lsp_signature.nvim" }, -- needs configuring
-	{
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end
-	},
-    {
-        "williamboman/mason-lspconfig.nvim",
-        config = function()
-            require("mason-lspconfig").setup({
-                ensure_installed = {
-                    "lua_ls",
-                    "rust_analyzer",
-                    "taplo",
-                    "clangd",
-					"zls"
-                }
-            })
-        end
-    },
+	-- default lsp client configs for various lsp servers
 	{
 		"neovim/nvim-lspconfig",
 		opts = {
-			document_highlight = {
-				enabled = false
-			}
+			document_highlight = { enabled = false }
 		},
+		config = function() end
+	},
+	-- manage external editor tooling manager (lsps, dap, linters, formatters)
+	{
+		"williamboman/mason.nvim",
 		config = function()
-			local lspconfig = require("lspconfig")
-
-			lspconfig.lua_ls.setup({ handlers = handlers })
-			lspconfig.taplo.setup({ handlers = handlers })
-			lspconfig.clangd.setup({ handlers = handlers })
-			-- lspconfig.rust_analyzer.setup({ handlers = handlers })
-			lspconfig.zls.setup({ handlers = handlers })
-
-			vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, {})
-			vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, {})
+			require("mason").setup({
+				ui = { border = "single" }
+			})
 		end
-	}
+	},
+	-- bridge between mason and lspconfig
+    {
+        "williamboman/mason-lspconfig.nvim",
+        config = function()
+			local mason_lspconfig = require("mason-lspconfig")
+
+            mason_lspconfig.setup({
+				automatic_installation = true
+            })
+
+			mason_lspconfig.setup_handlers({
+				function(server)
+					require("lspconfig")[server].setup({})
+				end,
+				["rust_analyzer"] = function ()
+					require("rust-tools").setup({})
+				end
+			})
+        end
+    },
+	{ "ray-x/lsp_signature.nvim" }, -- needs configuring
 }

@@ -11,6 +11,6 @@ vim.opt.colorcolumn = { 80, 120 }
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.laststatus = 3
-vim.opt.signcolumn = "no"
+-- vim.opt.signcolumn = ""
 vim.opt.autoindent = true
 vim.opt.smartindent = true

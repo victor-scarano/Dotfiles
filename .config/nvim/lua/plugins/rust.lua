@@ -8,7 +8,6 @@ return {
 		end,
 	},
 	-- rust file detection, syntax highlighting, formatting, Syntastic integration
-	-- not enabled because i get all the same functionality from my lsp
 	{
 		"rust-lang/rust.vim",
 		init = function ()
