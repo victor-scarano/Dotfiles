@@ -17,20 +17,15 @@ fi
 source "$ZINIT_HOME/zinit.zsh"
 
 zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
 autoload -Uz compinit && compinit
-zinit light zsh-users/zsh-autosuggestions
-zinit cdreplay -q
-zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
-zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
+zstyle ":completion:*" matcher-list "m:{a-zA-Z}={A-Za-z}"
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 
 bindkey -e
-bindkey '^I' autosuggest-accept
-export EDITOR=nvim
+export EDITOR="nvim"
 alias clear="clear && printf '\033[3J'"
-alias vi=nvim
+alias vi="nvim"
 alias ls="ls --color"
