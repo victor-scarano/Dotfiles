@@ -1,0 +1,36 @@
+version = 3
+final_space = true
+
+[[blocks]]
+type = "prompt"
+alignment = "left"
+
+[[blocks.segments]]
+template = "➜ "
+foreground = "#98C379"
+type = "text"
+style = "plain"
+
+[[blocks.segments]]
+template = " {{ .Path }} "
+foreground = "#56B6C2"
+type = "path"
+style = "plain"
+
+[blocks.segments.properties]
+style = "folder"
+
+[[blocks.segments]]
+template = "<#5FAAE8>git:(</>{{ .HEAD }}<#5FAAE8>)</>"
+foreground = "#D0666F"
+type = "git"
+style = "plain"
+
+[blocks.segments.properties]
+branch_icon = ""
+
+[[blocks.segments]]
+template = " ✗"
+foreground = "#BF616A"
+type = "status"
+style = "plain"
