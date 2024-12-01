@@ -1,5 +1,4 @@
 eval "$(oh-my-posh init zsh --config ~/.robbyrussell.omp.toml)"
-# consider zoxide
 
 HISTSIZE=10000
 HISTFILE=~/.zsh_history
