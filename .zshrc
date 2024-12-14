@@ -26,5 +26,16 @@ zinit snippet OMZP::command-not-found
 bindkey -e
 export EDITOR="nvim"
 alias clear="clear && printf '\033[3J'"
-alias vi="nvim"
+alias cls="clear && printf '\033[3J'"
+alias cd..="cd .."
 alias ls="ls --color"
+alias lsa="ls -a --color"
+
+function vi() {
+	if [ -n "$1" ]
+	then
+		nvim "$1"
+	else
+		nvim .
+	fi
+}

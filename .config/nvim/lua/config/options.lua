@@ -14,3 +14,4 @@ vim.opt.laststatus = 3
 -- vim.opt.signcolumn = ""
 vim.opt.autoindent = true
 vim.opt.smartindent = true
+vim.opt.iskeyword:remove("_")
