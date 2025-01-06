@@ -1,0 +1,6 @@
+theme = vesper
+font-family = "UbuntuMono Nerd Font"
+font-size = 26
+shell-integration = zsh
+window-decoration = false
+background-opacity = 0.7

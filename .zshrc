@@ -30,6 +30,7 @@ alias cls="clear && printf '\033[3J'"
 alias cd..="cd .."
 alias ls="ls --color"
 alias lsa="ls -a --color"
+alias ff="fastfetch"
 
 function vi() {
 	if [ -n "$1" ]
