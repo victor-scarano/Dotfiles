@@ -32,10 +32,15 @@ alias ls="ls --color"
 alias lsa="ls -a --color"
 alias ff="fastfetch"
 
+# TODO: include hidden files
+# TODO: if a directory is passed and there is only one file in it, open the file
 function vi() {
 	if [ -n "$1" ]
 	then
 		nvim "$1"
+	elif [ $(ls -1 | wc -l) -eq 1 ]
+	then
+		nvim $(ls -1)
 	else
 		nvim .
 	fi
