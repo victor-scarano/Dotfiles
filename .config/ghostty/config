@@ -4,3 +4,4 @@ font-size = 26
 shell-integration = zsh
 window-decoration = false
 background-opacity = 0.7
+mouse-hide-while-typing = true

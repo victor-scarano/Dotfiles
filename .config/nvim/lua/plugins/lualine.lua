@@ -68,6 +68,7 @@ return {
 			section_separators = { "" },
 			component_separators = { "" },
 			globalstatus = true,
+			refresh = { statusline = 1 }
 		},
 		sections = {
 			lualine_a = { { "mode", fmt = mode } },
