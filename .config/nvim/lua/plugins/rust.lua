@@ -8,17 +8,6 @@ return {
 		end,
 	},
 	-- rust file detection, syntax highlighting, formatting, Syntastic integration
-	{
-		"rust-lang/rust.vim",
-		init = function ()
-			-- vim.g.rustfmt_autosave = 1
-		end
-	},
-	-- configurable + rust specific nvimlsp config
-	{
-		"simrat39/rust-tools.nvim",
-		config = function()
-			require("rust-tools").setup()
-		end
-	}
+	-- is this even doing anything?
+	{ "rust-lang/rust.vim"},
 }

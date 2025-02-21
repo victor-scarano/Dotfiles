@@ -3,7 +3,7 @@ return {
 	"lukas-reineke/indent-blankline.nvim",
 	config = function()
 		require("ibl").setup({
-			indent = { char = "│" }, -- "┃, ▏"
+			indent = { char = "│" }, -- alternate chars: '┃' and '▏'
 			scope = { enabled = false },
 		})
 	end

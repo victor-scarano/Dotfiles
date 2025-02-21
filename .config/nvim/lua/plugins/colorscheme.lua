@@ -1,28 +1,27 @@
 return {
+	-- morhetz/gruvbox
+	-- wincent/base16-nvim
 	{
-		"morhetz/gruvbox",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		config = function()
-			-- vim.cmd.colorscheme("gruvbox")
-		end
-	},
-	{
-		"wincent/base16-nvim",
-		name = "base16-irblack",
-		config = function()
-			-- vim.cmd.colorscheme("base16-irblack")
+			require("catppuccin").setup({
+				transparent_background = true,
+			})
+			vim.cmd.colorscheme("catppuccin")
 		end
 	},
 	{
 		"projekt0n/github-nvim-theme",
 		name = "github-theme",
 		config = function()
-			require('github-theme').setup({
+			require("github-theme").setup({
 				options = {
 					transparent = true
 				}
 			})
 
-			vim.cmd.colorscheme("github_dark_default")
+			-- vim.cmd.colorscheme("github_dark_default")
 		end
-	}
+	},
 }

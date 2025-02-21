@@ -43,7 +43,6 @@ return {
 	{ "hrsh7th/cmp-cmdline" },
 	-- supplies cmp with path completions
 	{ "hrsh7th/cmp-path" },
-	{
-		"hrsh7th/cmp-nvim-lsp-signature-help"
-	}
+	-- what exactly does this do?
+	{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 }

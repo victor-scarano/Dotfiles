@@ -2,9 +2,7 @@ return {
 	-- default lsp client configs for various lsp servers
 	{
 		"neovim/nvim-lspconfig",
-		opts = {
-			document_highlight = { enabled = false }
-		},
+		opts = { document_highlight = { enabled = false } },
 		config = function() end
 	},
 	-- manage external editor tooling manager (lsps, dap, linters, formatters)
@@ -30,11 +28,13 @@ return {
 				function(server)
 					require("lspconfig")[server].setup({})
 				end,
+				--[[
 				["rust_analyzer"] = function ()
 					require("rust-tools").setup({})
 				end
+				--]]
 			})
         end
     },
-	{ "ray-x/lsp_signature.nvim" }, -- needs configuring
+	-- { "ray-x/lsp_signature.nvim" }, -- needs configuring
 }
